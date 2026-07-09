@@ -1,0 +1,26 @@
+with open("case-studies.html", "r") as file:
+    content = file.read()
+
+old_closing = """</section>
+"""
+
+new_closing = """</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image">&#8249;</button>
+  <img class="lightbox-image" id="lightboxImage" src="" alt="Enlarged screenshot">
+  <button class="lightbox-next" id="lightboxNext" aria-label="Next image">&#8250;</button>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+"""
+
+# Only replace the LAST occurrence of the closing section tag (the case-studies section itself)
+last_index = content.rfind(old_closing)
+if last_index != -1:
+    content = content[:last_index] + new_closing + content[last_index + len(old_closing):]
+    with open("case-studies.html", "w") as file:
+        file.write(content)
+    print("Lightbox markup added to case-studies.html successfully")
+else:
+    print("WARNING: closing section tag not found in case-studies.html — no changes made")
