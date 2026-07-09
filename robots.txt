@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kodrixlabs-portfolio.vercel.app/sitemap.xml
