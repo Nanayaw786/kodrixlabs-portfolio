@@ -1568,11 +1568,20 @@ section {
 
 /* Hide ElevenLabs widget's default bubble until user opts in via our menu */
 elevenlabs-convai {
-  display: none;
+  position: fixed;
+  bottom: -9999px;
+  left: -9999px;
+  opacity: 0;
+  pointer-events: none;
 }
 
 elevenlabs-convai.visible {
-  display: block;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  left: auto;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .contact-fab-wrapper {
