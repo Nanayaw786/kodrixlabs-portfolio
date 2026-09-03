@@ -36,16 +36,7 @@
     <div class="section-tag">Pricing</div>
     <h2>Simple pricing. One team for everything.</h2>
     <p class="section-subtext">
-      All prices in Ghana Cedis (GHS). Traveling internationally?
-      <span class="currency-toggle-label">Convert to:</span>
-      <select id="currencySelect" class="currency-select">
-        <option value="GHS">GHS (default)</option>
-        <option value="USD">USD</option>
-        <option value="GBP">GBP</option>
-        <option value="EUR">EUR</option>
-        <option value="CAD">CAD</option>
-      </select>
-      <span id="rateNote" class="rate-note"></span>
+      All prices in Ghana Cedis (GHS). Tap any plan to get a custom quote.
     </p>
 
     <div class="pricing-why">
@@ -58,7 +49,7 @@
     <div class="pricing-block">
       <h3 class="pricing-block-title">Social Media Management</h3>
       <div class="pricing-grid">
-        <div class="price-card">
+        <div class="price-card" data-plan="Starter">
           <h4>Starter</h4>
           <p class="price-amount" data-ghs="1800">GHS 1,800<span>/mo</span></p>
           <ul class="price-features">
@@ -69,7 +60,7 @@
             <li>Content calendar</li>
           </ul>
         </div>
-        <div class="price-card featured">
+        <div class="price-card featured" data-plan="Growth">
           <span class="price-badge">Most Popular</span>
           <h4>Growth</h4>
           <p class="price-amount" data-ghs="3500">GHS 3,500<span>/mo</span></p>
@@ -82,7 +73,7 @@
             <li>Detailed monthly reporting</li>
           </ul>
         </div>
-        <div class="price-card">
+        <div class="price-card" data-plan="Premium">
           <h4>Premium</h4>
           <p class="price-amount" data-ghs="6500">GHS 6,500<span>/mo</span></p>
           <ul class="price-features">
@@ -101,7 +92,7 @@
     <div class="pricing-block">
       <h3 class="pricing-block-title">Web &amp; App Development</h3>
       <div class="pricing-grid pricing-grid-4">
-        <div class="price-card">
+        <div class="price-card" data-plan="Landing Page">
           <h4>Landing Page</h4>
           <p class="price-amount" data-ghs="2500">GHS 2,500</p>
           <ul class="price-features">
@@ -111,7 +102,7 @@
             <li>2 weeks support</li>
           </ul>
         </div>
-        <div class="price-card featured">
+        <div class="price-card featured" data-plan="Business Website">
           <span class="price-badge">Most Popular</span>
           <h4>Business Website</h4>
           <p class="price-amount" data-ghs="6000">GHS 6,000-9,000</p>
@@ -123,7 +114,7 @@
             <li>1 month support</li>
           </ul>
         </div>
-        <div class="price-card">
+        <div class="price-card" data-plan="Web App / SaaS MVP">
           <h4>Web App / SaaS MVP</h4>
           <p class="price-amount" data-ghs="25000">From GHS 25,000</p>
           <ul class="price-features">
@@ -134,7 +125,7 @@
             <li>1 month support</li>
           </ul>
         </div>
-        <div class="price-card">
+        <div class="price-card" data-plan="Mobile App">
           <h4>Mobile App</h4>
           <p class="price-amount" data-ghs="35000">From GHS 35,000</p>
           <ul class="price-features">
@@ -152,7 +143,7 @@
     <div class="pricing-block">
       <h3 class="pricing-block-title">Paid Ads Management</h3>
       <div class="pricing-grid">
-        <div class="price-card">
+        <div class="price-card" data-plan="Launch">
           <h4>Launch</h4>
           <p class="price-amount" data-ghs="1500">GHS 1,500<span>/mo</span></p>
           <ul class="price-features">
@@ -163,7 +154,7 @@
             <li>Monthly reporting</li>
           </ul>
         </div>
-        <div class="price-card featured">
+        <div class="price-card featured" data-plan="Scale">
           <span class="price-badge">Most Popular</span>
           <h4>Scale</h4>
           <p class="price-amount" data-ghs="2800">GHS 2,800<span>/mo</span></p>
@@ -175,7 +166,7 @@
             <li>Bi-weekly reporting</li>
           </ul>
         </div>
-        <div class="price-card">
+        <div class="price-card" data-plan="Performance">
           <h4>Performance</h4>
           <p class="price-amount" data-ghs="5000">GHS 5,000<span>/mo</span></p>
           <ul class="price-features">
@@ -194,20 +185,20 @@
       <h3 class="pricing-block-title">Bundled Packages <span class="save-tag">Save 15-25%</span></h3>
       <p class="section-subtext" style="margin-bottom: 30px;">This is where most clients land &mdash; running social + ads + a website together compounds results, and it's cheaper than buying separately.</p>
       <div class="pricing-grid">
-        <div class="price-card">
+        <div class="price-card" data-plan="Digital Foundation">
           <h4>Digital Foundation</h4>
           <p class="price-amount" data-ghs="5500">GHS 5,500<span>/mo</span></p>
           <p class="bundle-desc">Business Website (one-time build) + Social Media Growth tier + Launch Ads</p>
           <p class="bundle-for">Best for: businesses just getting a real online presence for the first time</p>
         </div>
-        <div class="price-card featured">
+        <div class="price-card featured" data-plan="Growth Partner">
           <span class="price-badge">Best Value</span>
           <h4>Growth Partner</h4>
           <p class="price-amount" data-ghs="9000">GHS 9,000<span>/mo</span></p>
           <p class="bundle-desc">Social Media Growth tier + Scale Ads + ongoing site maintenance + monthly strategy call</p>
           <p class="bundle-for">Best for: businesses ready to scale visibility and sales together</p>
         </div>
-        <div class="price-card">
+        <div class="price-card" data-plan="Full Stack">
           <h4>Full Stack</h4>
           <p class="price-amount" data-ghs="16000">GHS 16,000<span>/mo</span></p>
           <p class="bundle-desc">Premium Social + Performance Ads + Web App/SaaS build (amortized) + dedicated priority support</p>
@@ -232,6 +223,37 @@
       <a href="contact.html" class="btn btn-primary">Book a Free Strategy Call</a>
     </div>
   </div>
+
+    <div class="quote-modal" id="quoteModal">
+      <div class="quote-modal-inner">
+        <button class="quote-modal-close" id="quoteModalClose" aria-label="Close">&times;</button>
+        <h3 id="quoteModalTitle">Get a Quote</h3>
+        <p class="quote-modal-plan" id="quoteModalPlan"></p>
+
+        <div class="quote-modal-options">
+          <a href="#" id="quoteWhatsappBtn" class="btn btn-primary" target="_blank" rel="noopener">Message on WhatsApp</a>
+          <p class="quote-or">or</p>
+          <form class="quote-form" id="quoteForm" action="https://formspree.io/f/xdarqobe" method="POST">
+            <input type="hidden" name="plan" id="quoteFormPlan">
+            <div class="form-group">
+              <label for="quoteName">Name</label>
+              <input type="text" id="quoteName" name="name" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label for="quoteEmail">Email</label>
+              <input type="email" id="quoteEmail" name="email" placeholder="you@company.com" required>
+            </div>
+            <div class="form-group">
+              <label for="quotePhone">Phone</label>
+              <input type="tel" id="quotePhone" name="phone" placeholder="+233 00 000 0000" required>
+            </div>
+            <button type="submit" class="btn btn-secondary form-submit" id="quoteFormSubmitBtn">Send Request</button>
+            <p class="form-status" id="quoteFormStatus"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+
 </section>
 
 <footer class="footer">
