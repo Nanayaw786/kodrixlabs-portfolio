@@ -2,16 +2,18 @@ from PIL import Image, ImageDraw, ImageFont
 
 width, height = 1200, 630
 
-color_bg_top = (234, 240, 255)
-color_bg_bottom = (255, 255, 255)
-color_primary = (47, 91, 255)
-color_text = (20, 22, 26)
-color_muted = (91, 97, 110)
-color_accent = (16, 185, 129)
+# Colors matching the site's design system
+color_bg_top = (234, 240, 255)      # light blue tint
+color_bg_bottom = (255, 255, 255)   # white
+color_primary = (47, 91, 255)       # --color-primary
+color_text = (20, 22, 26)           # --color-text
+color_muted = (91, 97, 110)         # --color-text-muted
+color_accent = (16, 185, 129)       # --color-accent
 
 img = Image.new("RGB", (width, height), color_bg_bottom)
 draw = ImageDraw.Draw(img)
 
+# Simple vertical gradient background
 for y in range(height):
     ratio = y / height
     r = int(color_bg_top[0] + (color_bg_bottom[0] - color_bg_top[0]) * ratio)
@@ -19,6 +21,7 @@ for y in range(height):
     b = int(color_bg_top[2] + (color_bg_bottom[2] - color_bg_top[2]) * ratio)
     draw.line([(0, y), (width, y)], fill=(r, g, b))
 
+# Accent bar at the top (matches the site's gradient accent line)
 for x in range(width):
     ratio = x / width
     r = int(color_primary[0] + (color_accent[0] - color_primary[0]) * ratio)
@@ -26,6 +29,7 @@ for x in range(width):
     b = int(color_primary[2] + (color_accent[2] - color_primary[2]) * ratio)
     draw.line([(x, 0), (x, 10)], fill=(r, g, b))
 
+# Try to load system fonts (fallback to default if not found)
 def load_font(paths, size):
     for path in paths:
         try:
@@ -49,15 +53,19 @@ logo_font = load_font(bold_font_paths, 72)
 tagline_font = load_font(bold_font_paths, 40)
 subtext_font = load_font(regular_font_paths, 28)
 
+# Logo text
 logo_text = "Kodrixlabs."
 draw.text((80, 220), logo_text, font=logo_font, fill=color_text)
 
+# Tagline
 tagline_text = "Software Developer & Digital Growth Specialist"
 draw.text((80, 320), tagline_text, font=tagline_font, fill=color_primary)
 
+# Subtext
 subtext = "Websites, Mobile Apps & Social Media Growth"
 draw.text((80, 390), subtext, font=subtext_font, fill=color_muted)
 
+# Small accent dot after "Kodrixlabs" already implied by period; add a decorative circle bottom right
 draw.ellipse((980, 480, 1120, 620), fill=color_primary)
 draw.ellipse((1010, 510, 1090, 590), fill=(255, 255, 255))
 
